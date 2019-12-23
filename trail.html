@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<title>SENSORS LAB</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="sensors1.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("homebg.webp");
+  min-height: 100%;
+}
+.bgimg-2 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("background.gif");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+
+
+.button {
+  background-color: #004A7F;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+p {
+  border: 2px solid black;
+  outline: #0099ff solid 10px;
+  margin: auto;  
+  padding: auto;
+  text-align: center;
+}
+
+.center {
+   border: 2px solid black;
+  margin: auto;
+  width: 100%;
+  outline: #0099ff solid 10px;
+  padding: 10px;
+}
+
+
+</style>
+
+
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><b>HOME</b></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#objectives" class="w3-bar-item w3-button"><b>OBJECTIVES</b></a>
+      <a href="#achievements" class="w3-bar-item w3-button"><b>ACHIEVEMENTS</a>
+      <a href="Gallery.html" target="_blank" class="w3-bar-item w3-button"><b> GALLERY</b></a>
+      <a href="#projects" class="w3-bar-item w3-button"> <b>PROJECTS</b></a>
+      <a href="#TRAININGS-OFFERED" class="w3-bar-item w3-button"0..> <b>TRAININGS-OFFERED</b></a>
+	    <a href="#GET IN TOUCH" class="w3-bar-item w3-button"> <b>GET IN TOUCH</b></a>
+		<a href="https://drive.google.com/open?id=0B66wHvlJS8uQM1dIWTBaMkJRd3hYR3ZNTzVuY3hEdTNkTll3" target="_blank" class="w3-bar-item w3-button"> <button>LAB ACTIVITIES</button></a>
+		<a href="#contact" class="w3-bar-item w3-button"> <button><b>JOIN US</b></button></a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16"><b>Close ×</b></a>
+  <a href="#objectives" onclick="w3_close()" class="w3-bar-item w3-button"><b>OBJECTIVES</b></a>
+  <a href="#achievements" onclick="w3_close()" class="w3-bar-item w3-button"><b>ACHIEVEMENTS</b></a>
+  <a href="Gallery.html" target="_blank" onclick="w3_close()" class="w3-bar-item w3-button"><b>GALLERY</b></a>
+  <a href="#projects" onclick="w3_close()" class="w3-bar-item w3-button"><b>PROJECTS</b></a>
+  <a href="#TRAININGS-OFFERED" onclick="w3_close()" class="w3-bar-item w3-button"><b>TRAININGS-OFFERED</b></a>
+  <a href="#GET IN TOUCH" onclick="w3_close()" class="w3-bar-item w3-button"><b>GET IN TOUCH</b></a>
+  <a href="https://drive.google.com/open?id=0B66wHvlJS8uQM1dIWTBaMkJRd3hYR3ZNTzVuY3hEdTNkTll3" target="_blank" onclick="w3_close()" class="w3-bar-item w3-button">LAB ACTIVITIES</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button"><b>JOIN US</b></a>
+</nav>
+
+<!-- Header with full-height image -->
+
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+  <img src="college.jpg" alt="college.jpg" style="width:75%;">
+
+    <span class="w3-jumbo w3-hide-small">SENSORS CELL</span><br>
+	
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">SENSORS CELL</span><br>
+    <span class="w3-large">BANNARI AMMAN INSTITUTE OF TECHNOLOGY</span>
+
+  </div> 
+
+</header>
+
+<!-- OBJECTIVES Section -->
+<div class="w3-container" style="padding:128px 16px" id="objectives">
+
+<BR>
+<BR>
+<table style="width:100%" >
+  <tr>
+    
+    <td style="text-align:center"><p><br><img src="objective1.jpg" alt="objective1.png" style="float: left; ">
+	
+	<br>
+	<br>
+	<B style="font-size:50px;">OBJECTIVE</B><br>
+		       <a style="font-size:20px;">  &#9635 To design and develop sensors for a wide variety of applications.
+	<br>
+		         &#9635 To create products based on the sensors developed, thereby cultivate engineering skills among students.
+				  </a>
+	<br>
+	<br>
+	<B style="font-size:50px;">FOCUS AREAS</B><br>
+	<a style="font-size:20px;">  &#9635 To design and develop sensors for a wide variety of applications.
+	<br>
+		         &#9635 To create products based on the sensors developed, thereby cultivate engineering skills among students.
+				  </a>
+	<br>
+	<br>
+	</p>
+	</td>
+  </tr>
+</table>
+<BR>
+<BR>
+  
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="achievements">
+ <h1 class= "w3-center" style="font-size:50px;"><b>ACHIEVEMENTS</b></h1>
+
+ <h1><img src="all.jpg" alt="all.jpg" style="width:75%;"></h1>
+ <br>
+ <br>
+ <br>
+  <h1><img src="all1.png" alt="all1.png" style="width:75%;"></h1>
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+     
+	  
+      <BR>
+	  <BR>
+
+
+	  <BR>
+	  <BR>
+    </div>
+ 
+  </div>
+</div>
+
+<!-- projects -->
+<div class="w3-container" style="padding:128px 16px" id="projects">
+<h1 class= "w3-center" style="font-size:50px;"><b>PROJECTS</b></h1>
+<BR>
+<BR>
+   <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>Design of AdBlue Sensor	PRICOL - Coimbatore	</h3>
+          
+          
+        </div>
+      </div>
+    </div>
+	 <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>Milk Adulteration Detection
+with MIR Spectrometry
+<BR>
+ROBERT BOSCH - R&D Centre - Bangalore
+</h3>
+          
+          
+        </div>
+      </div>
+    </div>
+		 <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>Interpretation and Analysis of Prostate Cancer from MRI using deep learning
+</h3>
+          
+          
+        </div>
+      </div>
+    </div>
+	
+	 <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>	Parametric analysis of milk using dielectric spectroscopy
+		  </h3>
+          
+          
+        </div>
+      </div>
+    </div>
+		 <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>Garbage odour detection</h3>
+          
+          
+        </div>
+      </div>
+    </div>
+		 <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>	Leaf sensor – Turgor pressure measurement</h3>
+          
+          
+        </div>
+      </div>
+    </div>
+		 <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>	Turmeric grading system</h3>
+          
+          
+        </div>
+      </div>
+    </div>
+		 <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>	Smart irrigation system</h3>
+          
+          
+        </div>
+      </div>
+    </div>
+		 <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>	Diabeto watch</h3>
+          
+          
+        </div>
+      </div>
+    </div>
+		 <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>	State of charge measurement in E-Vehicles</h3>
+          
+          
+        </div>
+      </div>
+    </div>
+		 <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>	Embedded system based design for detecting formalin in fish</h3>
+          
+          
+        </div>
+      </div>
+    </div>
+	
+
+</div>
+
+<p>
+  <a><video width="400" controls style="align:center;">
+  <source src="video.mp4" type="video/mp4">
+ 
+  
+</video></a>
+</p>
+
+<br>
+<br>
+
+
+<!-- TRAININGS-OFFERED Section -->
+
+
+<header class="bgimg-2 w3-display-container w3-grayscale-min" id="TRAININGS-OFFERED">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+
+<div class="w3-container" style="padding:128px 16px; background-image:" id="TRAININGS-OFFERED">
+  <h1 class= "w3-center" style="font-size:50px;"><b>TRAININGS-OFFERED</b></h1>
+ 
+  <div class="center">
+  <a> <a style="text-align: center;font-size:20px;" >
+  Trainings offered:<BR>
+&#9672;Sensor interfacing techniques <BR>
+	&#9658;Design of signal conditioning unit and data acquisition systems<BR>
+	&#9658;Programming with embedded boards<BR>
+&#9672;	Spectroscopic measurements and analysis using machine learning<BR>
+&#9672;Design and development of sensors for various applications.<BR>
+</a></a>
+</div>
+    
+
+  </div> 
+
+</header>
+</div>
+
+
+
+<!-- GET IN TOUCH Section -->
+<div class="w3-container w3-center  style="padding:128px 16px" id="GET IN TOUCH">
+<br>
+<br>
+<br>
+   <h1 class= "w3-center" style="font-size:50px;"><b>GET IN TOUCH</b></h1>
+  
+<BR>
+<BR>
+
+
+<table style="width:100%" >
+  <tr>
+    
+    <td style="text-align:center"><p><img src="college2.jpg" alt="college.png" style="float: left; ">
+	
+	<br>
+	<br>
+	 <a class="button" href="#">JOIN US</a>
+	 <br>
+	 <br>
+	Explore more and join us
+	<br>
+	 @
+<br>	 Sensors and Instrumentation Laboratory <br> Bannari Amman Institute of Technology - Sathyamangalam
+	<br>
+	<i class="fa fa-address-book" style="font-size:20px;color:red"></i><b>Contact:Dr BALAMURUGAN V T</b>
+	<br>
+	<mark>Incharge:</mark> Sensors and Instrumentation Laboratory, Bannari Amman Institute<br>
+	of Technology, Alathukombai - Post, Sathyamangalam, Erode District,<br>
+	Tamil Nadu - 638 401
+	<br>
+	<i class="fa fa-id-badge" style="font-size:20px;color:red"></i> 95006 76270
+	<br>
+	<i class="fa fa-envelope-o" style="font-size:20px;color:red"></i> balamurugan@bitsathy.ac.in
+	<br>
+	<br>
+	</p>
+	</td>
+  </tr>
+</table>
+
+
+<BR>
+<BR>
+
+
+
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-red w3-padding-40">
+  <a href="#home" ><i class="fa fa-arrow-up " ></i></a>
+  <a href="#home" ><i class="fa fa-arrow-up " ></i></a>
+  <a href="#home" ><i class="fa fa-arrow-up " ></i></a>
+  <a href="#home" ><i class="fa fa-arrow-up " ></i></a>
+  <a href="#home" ><i class="fa fa-arrow-up " ></i></a>
+  <a href="#home" ><i class="fa fa-arrow-up " ></i></a>
+  
+  <h6>Designed by <a  title="PRAKASH K"  class="w3-hover-text-yellow">PRAKASH K</a></h6>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>
